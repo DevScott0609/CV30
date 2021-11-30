@@ -1,0 +1,37 @@
+.mainBody {
+    position: relative;
+    display: flex;
+    .columnRight {
+        position: relative;
+        margin-left: auto;
+        @media (max-width: 960px) {
+            margin-right: auto;
+            order: 1;
+        }
+        .columnRightContent {
+            position: relative;
+            right: 0;
+            left: 0;
+            top: -215px;
+            margin-bottom: -215px;
+            background: #fff;
+            height: calc(100% + 215px);
+            @media (max-width: 960px) {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                margin-bottom: 50px;
+                height: auto !important;
+            }
+        }
+    }
+    .centralColumn {
+        position: relative;
+        margin-left: auto;
+        @media (max-width: 960px) {
+            margin-right: auto;
+            order: 2;
+        }
+    }
+}

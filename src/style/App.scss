@@ -1,0 +1,49 @@
+body,
+html,
+#root {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#root {
+    // background: #989898;
+    background: #ffffff;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+@import 'modules/nav';
+@import 'modules/dashboard';
+@import 'modules/auth';
+@import 'modules/landingPage';
+@import 'modules/columns';
+@import 'modules/listItem';
+@import 'modules/header';
+@import 'modules/users';
+@import 'modules/company';
+@import 'modules/team';
+@import 'modules/job';
+@import 'modules/newsFeed';
+@import 'modules/feed';
+@import 'modules/slider';
+@import 'modules/article';
+@import 'modules/settings';
+@import 'modules/toggle';
+@import 'modules/filters';
+@import 'modules/articleSlider';
+@import 'modules/colorPicker';
+@import 'modules/loader';
+@import 'modules/feedback';
+@import 'modules/imageUpload';
+@import 'modules/utils';
+@import 'modules/tagsInput';
+@import 'modules/contactPage'

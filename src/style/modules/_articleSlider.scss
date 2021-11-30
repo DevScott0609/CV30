@@ -1,0 +1,67 @@
+.sliderRoot {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    .sliderHeader {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .sliderControls {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .sliderDot {
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+                background: #414141;
+                opacity: 0.3;
+                margin: 0 3px;
+
+                &.active {
+                    width: 15px;
+                    height: 15px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .sliderMain {
+        display: flex;
+
+        .sliderContents {
+            flex: 1;
+            position: relative;
+        }
+
+        .floatingEditBtn {
+            padding: 0;
+            position: absolute;
+            top: 10px;
+            right: 45px;
+            width: 30px;
+            height: 30px;
+            background: #397db9;
+            color: #fff;
+            box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+        }
+
+        .floatingDeleteBtn {
+            padding: 0;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #aaa;
+            background: #fff;
+            color: #aaa;
+            box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+        }
+    }
+}

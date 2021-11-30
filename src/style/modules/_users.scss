@@ -1,0 +1,1033 @@
+.userProfileRoot {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: calc(100vh - 65px);
+    margin-top: 65px;
+
+    .header {
+        background: linear-gradient(to right, #49525e 0%, #1f3947 100%);
+        transition: all 1s ease-in;
+    }
+
+    .circleEditBtn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #397db9;
+        color: #fff;
+        position: absolute;
+        min-width: auto;
+        min-height: auto;
+    }
+
+    .userAvatar {
+        display: flex;
+        padding-top: 15px;
+        align-items: center;
+        position: relative;
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            margin-right: 20px;
+            // background-color: #bdbdbd;
+            background: #ffffff;
+        }
+
+        .avatarTexts {
+            color: #fff;
+            position: relative;
+
+            h3 {
+                font-size: 1.85rem;
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+            }
+
+            h4 {
+                font-size: 1.25rem;
+                font-weight: 300;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .badgeRoot,
+        .settingsBtn {
+            position: absolute;
+            background: #397db9;
+            color: #fff;
+            min-width: auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .badgeRoot {
+            bottom: 0;
+            left: 90px;
+        }
+
+        .colorPickerButton {
+            background: #4893cc;
+            color: #fff;
+            padding: 2px 10px 2px 30px;
+            margin: 12px 0 0 30px;
+
+            .icon {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: absolute;
+                left: -25px;
+                background: #397db9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &:hover {
+                background: #397db9;
+
+                .icon {
+                    background: #397db9;
+                }
+            }
+        }
+
+        .nameEditToggle {
+            background: #4893cc;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+        }
+
+        .avatarLoadCircle {
+            color: #fff;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 600px) {
+            justify-content: center;
+        }
+    }
+
+    .headerStories {
+        display: flex;
+        margin-top: 50px;
+
+        .storyContainer {
+            position: relative;
+            cursor: pointer;
+            width: 200px;
+            height: 140px;
+            padding: 0;
+            margin: 0 3px;
+            display: flex;
+
+            .storyImg {
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: 100%;
+            }
+
+            .storyTitle {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 5px;
+                text-align: center;
+            }
+
+            &.add {
+                width: 208px;
+                height: 148px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border: 2px dashed #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .bigPlus {
+                    color: #fff;
+                    font-size: 3rem;
+                }
+
+                .storyTitle {
+                    background: none;
+                }
+            }
+
+            .removeStoryBtn {
+                min-width: auto;
+                min-height: auto;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: -10px;
+                right: 10px;
+                color: red;
+                background: white;
+                padding: 2px;
+            }
+        }
+
+        .sliderRoot {
+            display: flex;
+            justify-content: center;
+
+            .sliderHeader {
+                order: 2;
+                align-items: center;
+                justify-content: center;
+
+                .sliderArrow {
+                    color: #fff;
+                }
+
+                .sliderDot {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #fff;
+                    opacity: 0.3;
+                    margin: 0 2px;
+                    cursor: pointer;
+
+                    &.active {
+                        opacity: 1;
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+
+            .sliderMain {
+                justify-content: center;
+
+                .sliderContents {
+                    position: relative;
+                    display: none;
+
+                    &.active {
+                        display: block;
+                    }
+
+                    img {
+                        max-width: 200px;
+                        max-height: 140px;
+                        width: 100%;
+                        height: 100%;
+
+                        @media (max-width: 600px) {
+                            max-width: 100%;
+                        }
+                    }
+
+                    .textContents {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        color: #fff;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 5px;
+                        text-align: center;
+
+                        h4 {
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 960px) {
+            flex-direction: column;
+        }
+    }
+
+    .headerSkills {
+        display: flex;
+        margin-top: 50px;
+
+        .skillsContainer {
+            &:first-of-type {
+                margin-bottom: 15px;
+            }
+
+            .headerSkillsTitle {
+                display: inline-flex;
+                width: 100px;
+                font-size: 0.9rem;
+                margin-right: 30px;
+
+                &:before {
+                    content: "|";
+                    margin-right: 10px;
+                    font-weight: bold;
+                }
+
+                &.softSkills {
+                    color: #73a9ff;
+                }
+
+                &.values {
+                    color: #c4a848;
+                }
+
+                @media (max-width: 600px) {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 5px;
+                    font-size: 1.15rem;
+                }
+            }
+
+            .chip {
+                background: none;
+                border-radius: 5px;
+                border: 1px solid;
+                margin: 5px;
+                color: #fff;
+                text-transform: capitalize;
+
+                &.skills {
+                    border-color: #73a9ff;
+                }
+
+                &.values {
+                    border-color: #c4a848;
+                }
+            }
+
+            &.edit {
+                .skillsWrapper {
+                    display: inline-flex;
+                    align-items: center;
+                    color: #fff;
+                    text-transform: capitalize;
+                    font-size: 0.8125rem;
+                    font-weight: normal;
+                    position: relative;
+                    padding: 5px 30px 5px 5px;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 5px;
+                }
+
+                .headerSkillsTitle {
+                    width: auto;
+                    margin-right: 10px;
+
+                    &:before {
+                        content: "";
+                    }
+                }
+
+                .circleEditBtn {
+                    right: -20px;
+                }
+            }
+        }
+    }
+
+    .mainBody.userProfileShow {
+        background: #fff;
+        border-top: 1px solid #989c9f;
+        flex: 1;
+
+        .columnRight {
+            .columnRightContent {
+                border-color: #989c9f;
+                border-width: 1px 0 0 1px;
+                border-style: solid;
+
+                @media (max-width: 960px) {
+                    border: none;
+                }
+
+                .columnTitle {
+                    padding: 15px 25px;
+                    background: #397db9;
+
+                    h2 {
+                        margin: 0;
+                        color: #fff;
+                        font-weight: 100;
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.875rem;
+                        padding: 0;
+
+                        i {
+                            color: #fff;
+                        }
+
+                        .contactEditBtn {
+                            margin-left: auto;
+                            background: #fff;
+                            color: #397db9;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .contactDetails {
+                        max-height: 0;
+                        transition: max-height 0.15s ease-out;
+                        overflow: hidden;
+
+                        &.open {
+                            max-height: 500px;
+                            transition: max-height 0.25s ease-in;
+                        }
+
+                        .contactDetail {
+                            color: #fff;
+                            padding: 10px 0;
+                            font-size: 0.85rem;
+                            font-weight: normal;
+
+                            span {
+                                font-weight: 100;
+                            }
+                        }
+                    }
+
+                    .editContactDetails {
+                        max-height: 0;
+                        transition: max-height 0.15s ease-out;
+                        overflow: hidden;
+
+                        &.open {
+                            max-height: 500px;
+                            transition: max-height 0.25s ease-in;
+                        }
+
+                        p {
+                            font-size: 0.75rem;
+                            color: #fff;
+                            font-weight: 100;
+                        }
+
+                        .addContactFieldBtn {
+                            background: #4893cc;
+                            color: #fff;
+                        }
+
+                        .contactDetailsEditForm {
+                            padding: 20px 0;
+
+                            .formGroup {
+                                display: flex;
+                                align-items: baseline;
+                                justify-content: space-between;
+                            }
+
+                            .contactFormLabel {
+                                color: #fff;
+                            }
+
+                            .contactTextInput {
+                                color: #fff;
+                            }
+
+                            .contactTextInputRoot {
+                                border-color: #fff;
+
+                                &:before,
+                                &:after {
+                                    border-color: #fff;
+                                }
+                            }
+
+                            .contactUnderline {
+                                color: red;
+                                border-color: pink;
+                            }
+
+                            .removeBtn {
+                                padding: 0;
+                                width: 25px;
+                                min-width: auto;
+                                height: 25px;
+                                min-height: auto;
+                                border-radius: 50%;
+                                background: #fff;
+                                color: #ff0000;
+                            }
+
+                            .textField {
+                                margin: 15px 0;
+                                width: 90%;
+                            }
+
+                            .submitBtn {
+                                display: flex;
+                                margin-left: auto;
+                                position: relative;
+                                background: #fff;
+                                color: #397db9;
+                                box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+                            }
+                        }
+                    }
+                }
+
+                .knowHowContainer,
+                .myStoryContainer,
+                .desiredSalaryContainer {
+                    display: flex;
+                    padding: 25px;
+                    justify-content: space-between;
+                    flex-direction: column;
+
+                    h4 {
+                        font-size: 1.875rem;
+                        margin: 0;
+                        padding: 0;
+                        font-weight: 100;
+                        color: #397db9;
+                    }
+                }
+
+                .myStoryContainer,
+                .desiredSalaryContainer {
+                    .submitBtn {
+                        display: flex;
+                        margin-left: auto;
+                        margin-top: 10px;
+                        position: relative;
+                        color: #fff;
+                        background: #397db9;
+                        box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+                    }
+                }
+
+                .desiredSalaryContainer {
+                    p {
+                        font-weight: 100;
+                        color: #397db9;
+                        font-size: 0.75rem;
+                    }
+
+                    .salaryToggle {
+                        display: flex;
+                        align-items: center;
+
+                        label {
+                            color: #565656;
+                            font-weight: bold;
+                            font-size: 0.75rem;
+
+                            &.active {
+                                color: #397db9;
+                            }
+                        }
+                    }
+                }
+
+                .myStoryContainer {
+                    .storyEditor {
+                        .storyEditorinput {
+                            font-weight: normal;
+                            color: #9f9f9f;
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                .knowHowContainer {
+                    .controls {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .sliderControls {
+                        align-items: center;
+                        display: flex;
+
+                        .sliderArrow {
+                            &>span {
+                                &>span {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+
+                        .sliderDot {
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 50%;
+                            background: #000;
+                            opacity: 0.3;
+                            margin: 0 3px;
+
+                            &.active {
+                                height: 10px;
+                                width: 10px;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .sliderContents {
+                        display: none;
+                        flex-direction: column;
+
+                        p {
+                            color: #585858;
+                            white-space: pre-line;
+                        }
+
+                        &.active {
+                            display: flex;
+                        }
+                    }
+
+                    .textContents {
+                        order: 1;
+                    }
+
+                    .media {
+                        height: 200px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        order: 2;
+
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                hr {
+                    width: calc(100% - 50px);
+                }
+
+                .myStoryContainer {
+                    p {
+                        color: #397db9;
+                        font-style: italic;
+                    }
+
+                    .storyText {
+                        white-space: pre-line;
+                    }
+                }
+
+                .storyEditPaperInline {
+                    margin: 15px -25px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        .centralColumn {
+            .experienceSection {
+                display: flex;
+                flex-direction: column;
+
+                .sectionTitle {
+                    margin: 20px 0 40px;
+                    font-weight: 100;
+                    color: #397db9;
+                }
+
+                .experienceItem,
+                .projectItem {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid #ededed;
+                    border-radius: 10px;
+                    padding: 25px 15px;
+                    margin-bottom: 30px;
+
+                    .company {
+                        position: absolute;
+                        left: 15px;
+                        top: -19px;
+                        background: #fff;
+                        padding: 7px 10px;
+                        border: 1px solid #ededed;
+                        border-radius: 20px;
+
+                        .highlight {
+                            color: #397db9;
+                        }
+
+                        @media(max-width: 600px) {
+                            font-size: 0.75rem;
+                            position: relative;
+                            left: auto;
+                            top: auto;
+                            margin: auto;
+                        }
+                    }
+
+                    .durationLocation {
+                        position: absolute;
+                        top: -19px;
+                        background: #fff;
+                        padding: 7px 10px;
+                        border: 1px solid #ededed;
+                        border-radius: 20px;
+                        right: 15px;
+
+                        @media(max-width: 600px) {
+                            font-size: 0.75rem;
+                            position: relative;
+                            right: auto;
+                            top: auto;
+                            margin: 10px auto;
+                        }
+
+                        &.editable {
+                            right: 80px;
+                        }
+
+                        .period {
+                            &:after {
+                                content: "";
+                                background: #777;
+                                position: relative;
+                                display: inline-flex;
+                                font-size: 10px;
+                                margin: 0 7px;
+                                width: 3px;
+                                height: 13px;
+                            }
+                        }
+                    }
+
+                    .experienceGrid {
+                        justify-content: space-between;
+
+                        h4 {
+                            font-size: 1rem;
+                            color: #565656;
+                        }
+
+                        p {
+                            color: #565656;
+                            font-size: 0.85rem;
+                        }
+
+                        .media {
+                            // background: none;
+                            height: 140px;
+                            overflow: hidden;
+                        }
+
+                        .articleImg {
+                            max-width: 100%;
+                            max-height: 100%;
+                            // width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .experienceItemEditBtn {
+                    position: absolute;
+                    background: #397db9;
+                    border-radius: 50%;
+                    color: #fff;
+                    width: 40px;
+                    min-width: auto;
+                    height: 40px;
+                    min-height: auto;
+                    top: -20px;
+                    right: 20px;
+                    box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+                    padding: 6px;
+                }
+            }
+        }
+
+        .experienceAdd,
+        .addArticle {
+            position: relative;
+            display: flex;
+            border: 2px dashed #76acd2;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            cursor: pointer;
+            color: #277dba;
+            text-transform: none;
+        }
+
+        .addArticle {
+            margin: 25px;
+        }
+
+        .experienceForm {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border: 1px solid #f2f2f2;
+            border-radius: 10px;
+            margin-bottom: 75px;
+            box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+
+            h4 {
+                padding: 10px 25px 0;
+            }
+
+            section {
+                padding: 25px;
+
+                &.mediaUpload {
+                    border-top: 2px solid #f1f1f1;
+                    border-bottom: 2px solid #f1f1f1;
+                    background: #fafafa;
+
+                    .hiddenFileInput {
+                        display: none;
+                    }
+                }
+
+                &.editControls {
+                    position: relative;
+
+                    .cancelBtn,
+                    .submitBtn {
+                        position: absolute;
+                        border-radius: 50%;
+                        box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+                    }
+
+                    .cancelBtn {
+                        // width: 25px;
+                        // height: 25px;
+                        min-width: auto;
+                        min-height: auto;
+                        border: 1px solid #aaa;
+                        background: #fff;
+                        color: #aaa;
+                        bottom: -24px;
+                        right: 100px;
+                    }
+
+                    .submitBtn {
+                        background: #397db9;
+                        color: #fff;
+                        right: 30px;
+                        bottom: -24px;
+                    }
+                }
+            }
+
+            .textField {
+                margin: 15px 0;
+            }
+
+            h4 {
+                color: #565656;
+            }
+
+            .datePickers {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 15px 0;
+                flex-wrap: wrap;
+
+                p {
+                    width: 100%;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+            }
+
+            .imagePreview {
+                position: relative;
+                margin-bottom: 10px;
+
+                .previewImg {
+                    padding: 5px;
+                    border: 2px dotted #aaa;
+                    max-width: 150px;
+                    max-height: 150px;
+                    box-sizing: border-box;
+                }
+
+                .removeBtn {
+                    position: absolute;
+                    top: -12px;
+                    left: -12px;
+                    background: #fff;
+                    color: red;
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    .media {
+        // background: #989898;
+        background: #ffffff;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        cursor: pointer;
+        object-fit: cover;
+
+        .playIcon {
+            color: #fff;
+            font-size: 3rem;
+        }
+    }
+}
+
+.skillsEditPaper,
+.nameEditPaper {
+    background: #fff;
+    border: 1px solid #707881;
+    border-radius: 5px !important;
+    width: 465px;
+    position: relative;
+    overflow: visible !important;
+    margin-top: 20px;
+    margin-left: 50px;
+
+    .popupHeader {
+        border-bottom: 2px solid #ececec;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+
+        .helperText {
+            color: #a6a6a6;
+            font-size: 0.7rem;
+        }
+
+        .addSkillButton {
+            background: #397db9;
+            color: white;
+            text-transform: none;
+            min-width: 50px;
+            min-height: 25px;
+            padding: 0;
+        }
+
+        .title {
+            margin-bottom: 5px;
+        }
+
+        .inputRoot {
+            flex-wrap: wrap;
+            padding: 5px 0;
+
+            .chip {
+                margin: 2px;
+            }
+
+            .tagInput {
+                width: auto;
+                padding: 0 3px;
+            }
+        }
+    }
+
+    .popupBody {
+        padding: 15px;
+        background: #fafafa;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+
+        .chip {
+            text-transform: capitalize;
+            background: #fff;
+            border: 1px solid #4484bd;
+            color: #4484bd;
+            border-radius: 5px;
+            margin: 2px;
+
+            .deleteIcon {
+                background: none;
+                color: #4484bd;
+            }
+        }
+
+        span.noChips {
+            color: #bbb;
+            font-size: .75rem;
+            font-style: italic;
+        }
+    }
+
+    .popupFooter {
+        background: #fff;
+        padding: 15px;
+        position: relative;
+
+        .footerCheck {
+            position: absolute;
+            background: #4484bd;
+            color: #fff;
+            border-radius: 50%;
+            bottom: -24px;
+            right: 20px;
+        }
+        .footerCancel {
+            position: absolute;
+            border: 1px solid #aaa;
+            background: #ffffff;
+            color: #aaa;
+            border-radius: 50%;
+            bottom: -24px;
+            right: 80px;
+        }
+    }
+}
+
+.nameEditPaper {
+    .popupBody {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .textField {
+        margin-top: 15px;
+
+        &:not(:last-child) {
+            flex: 1;
+            min-width: 49%;
+        }
+
+        &:first-of-type {
+            margin-right: 2%;
+        }
+    }
+}

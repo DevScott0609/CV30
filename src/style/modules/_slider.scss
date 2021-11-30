@@ -1,0 +1,64 @@
+.sliderContainer {
+    display: flex;
+    position: relative;
+    .slides {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        .slideItem {
+            display: none;
+            width: 100%;
+            &.active {
+                display: flex;
+            }
+        }
+    }
+    .sliderControls {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .sliderDot {
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+            width: 15px;
+            height: 15px;
+            margin: 0 3px;
+            cursor: pointer;
+            &.active {
+                width: 25px;
+                height: 25px;
+                background: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+}
+
+.teamSliderMain {
+    display: flex;
+    width: 100%;
+    position: relative;
+    .slidesContainer {
+        // display: flex;
+        width: 100%;
+    }
+    .teamSliderBtn {
+        background: none;
+        border: none;
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        color: #397db9;
+        width: 40px;
+        height: 40px;
+        min-width: auto;
+        min-height: auto;
+        box-shadow: 0px 2px 5px 1px rgba(120, 118, 120, 0.3);
+        align-self: center;
+        &.back {
+            left: 10px;
+        }
+        &.next {
+            right: 10px;
+        }
+    }
+}
